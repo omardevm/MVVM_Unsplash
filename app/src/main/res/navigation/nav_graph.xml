@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/galleryFragment"
-        android:name="com.omar.mvvm.Views.Fragments.GalleryFragment"
+        android:name="com.omar.mvvm.Views.Fragments.Gallery.GalleryFragment"
         android:label="fragment_gallery"
         tools:layout="@layout/fragment_gallery" />
 </navigation>

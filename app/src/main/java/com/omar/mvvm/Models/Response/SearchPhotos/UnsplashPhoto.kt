@@ -1,7 +1,7 @@
 package com.omar.mvvm.Models.Response.SearchPhotos
 
 import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 //Retrofit Serialized names vs Parcelize it's more intuitive but more boilerplate code
 @Parcelize
