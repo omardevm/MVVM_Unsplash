@@ -1,7 +1,8 @@
-package com.omar.mvvm
+package com.omar.mvvm.Views.Activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.omar.mvvm.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

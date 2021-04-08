@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">MVVM</string>
     <string name="unsp_desc">Image from API</string>
+    <string name="retry">Reintentar</string>
+    <string name="err_404">Los resultados no pudieron ser cargados.</string>
+    <string name="err_empty">No se encontraron resultados para ésta búsqueda</string>
 </resources>
