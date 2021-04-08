@@ -46,9 +46,13 @@ class PagingPhotoAdapter : PagingDataAdapter<UnsplashPhoto, PagingPhotoAdapter.P
             holder.bind(currentItem)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotoViewHolder {
-        val binding =
-            ItemUnsplashPhotoBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return PhotoViewHolder(binding)
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotoViewHolder =
+        PhotoViewHolder(
+            ItemUnsplashPhotoBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
+
 }

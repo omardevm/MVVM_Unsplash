@@ -1,6 +1,5 @@
 package com.omar.mvvm.Views.Fragments.Gallery
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
