@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MVVM</string>
+    <string name="app_name">MVVM Omar</string>
     <string name="unsp_desc">Image from API</string>
     <string name="retry">Reintentar</string>
     <string name="err_404">Los resultados no pudieron ser cargados.</string>

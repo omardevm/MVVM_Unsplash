@@ -20,11 +20,11 @@ class UnsplashPhotoLoadStateAdapter(private val retry: () -> Unit) :
             }
         }
 
-        fun bind(loadState: LoadState) {
+        fun bind(ls: LoadState) {
             binding.apply {
-                progressState.isVisible = loadState is LoadState.Loading
-                buttonRetry.isVisible = loadState !is LoadState.Loading
-                txtStateError.isVisible = loadState !is LoadState.Loading
+                progressState.isVisible = ls is LoadState.Loading
+                buttonRetry.isVisible = ls !is LoadState.Loading
+                txtStateError.isVisible = ls !is LoadState.Loading
             }
         }
     }
