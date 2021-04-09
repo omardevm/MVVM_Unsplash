@@ -9,5 +9,18 @@
         android:id="@+id/galleryFragment"
         android:name="com.omar.mvvm.Views.Fragments.Gallery.GalleryFragment"
         android:label="fragment_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_gallery" >
+        <action
+            android:id="@+id/action_galleryFragment_to_galleryDetailFragment"
+            app:destination="@id/galleryDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/galleryDetailFragment"
+        android:name="com.omar.mvvm.Views.Fragments.GalleryDetail.GalleryDetailFragment"
+        android:label="fragment_gallery_detail"
+        tools:layout="@layout/fragment_gallery_detail" >
+        <argument
+            android:name="photo"
+            app:argType="com.omar.mvvm.Models.Response.SearchPhotos.UnsplashPhoto" />
+    </fragment>
 </navigation>
