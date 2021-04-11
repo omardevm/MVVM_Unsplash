@@ -8,6 +8,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import com.omar.mvvm.Models.Response.SearchPhotos.UnsplashPhoto
 import com.omar.mvvm.R
@@ -20,7 +21,6 @@ import dagger.hilt.android.AndroidEntryPoint
 class GalleryFragment : Fragment(R.layout.fragment_gallery),
     PagingPhotoAdapter.OnItemClickListener {
     private val viewModel by viewModels<GalleryViewModel>()
-
     private var _binding: FragmentGalleryBinding? = null
     private val binding get() = _binding!!
 
@@ -91,6 +91,7 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery),
     }
 
     override fun onItemClick(photo: UnsplashPhoto) {
-
+        val action = GalleryFragmentDirections.actionGalleryFragmentToGalleryDetailFragment(photo)
+        findNavController().navigate(action)
     }
 }
