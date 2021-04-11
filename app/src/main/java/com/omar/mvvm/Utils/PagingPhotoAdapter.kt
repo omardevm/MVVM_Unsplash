@@ -11,11 +11,25 @@ import com.omar.mvvm.Models.Response.SearchPhotos.UnsplashPhoto
 import com.omar.mvvm.R
 import com.omar.mvvm.databinding.ItemUnsplashPhotoBinding
 
-class PagingPhotoAdapter : PagingDataAdapter<UnsplashPhoto, PagingPhotoAdapter.PhotoViewHolder>(
-    PHOTO_COMPARATOR
-) {
-    class PhotoViewHolder(private val binding: ItemUnsplashPhotoBinding) :
+class PagingPhotoAdapter(private val listener: OnItemClickListener) :
+    PagingDataAdapter<UnsplashPhoto, PagingPhotoAdapter.PhotoViewHolder>(
+        PHOTO_COMPARATOR
+    ) {
+    inner class PhotoViewHolder(private val binding: ItemUnsplashPhotoBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            binding.root.setOnClickListener {
+                val position = bindingAdapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    val item = getItem(position)
+                    if (item != null) {
+                        listener.onItemClick(item)
+                    }
+                }
+            }
+        }
+
         fun bind(photo: UnsplashPhoto) {
             binding.apply {
                 Glide.with(itemView).load(photo.urls.regular).centerCrop()
@@ -26,6 +40,10 @@ class PagingPhotoAdapter : PagingDataAdapter<UnsplashPhoto, PagingPhotoAdapter.P
                 unsplashTxt.text = photo.user.username
             }
         }
+    }
+
+    interface OnItemClickListener {
+        fun onItemClick(photo: UnsplashPhoto)
     }
 
     companion object {
